@@ -5,146 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Academic Website</title>
     <style>
-        /* Basic Page Styles */
+        /* Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+        /* Basic Styles */
         body {
             margin: 0;
             padding: 0;
             font-family: "Merriweather", Georgia, serif;
-            background: #f4f4f4;
-            color: #000;
+            background: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-wrap: wrap;
+            gap: 20px;
         }
-        h1 {
-            font-size: 3rem;
-            text-transform: small-caps;
-            letter-spacing: 2px;
+
+        /* Irregular Content Blocks */
+        .block {
+            position: relative;
+            color: #fff;
+            font-size: 1rem;
+            overflow: hidden;
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
-            margin: 0;
+            line-height: 1.5;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Shapes and Colors for Blocks */
+        .block1 {
+            background: #444;
+            width: 300px;
+            height: 300px;
+        }
+
+        .block2 {
+            background: #666;
+            width: 400px;
+            height: 200px;
+        }
+
+        .block3 {
+            background: #888;
+            width: 300px;
+            height: 400px;
+        }
+
+        .block4 {
+            background: #222;
+            width: 500px;
+            height: 300px;
+        }
+
+        /* Title (Centered on Page) */
+        .title {
             position: absolute;
-            top: 20%;
+            top: 20px;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
+            text-transform: small-caps;
+            font-size: 3rem;
+            color: #000;
+            text-align: center;
             z-index: 10;
         }
-        p, ul, a {
-            font-size: 1rem;
-            text-align: justify;
-            color: #000;
-            text-decoration: none;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li::before {
-            content: "•";
-            color: #555;
-            margin-right: 5px;
-        }
 
-        /* Irregular Graphic Shapes */
-        .shape {
-            position: absolute;
-            background: #000;
-            opacity: 0.7;
-            border-radius: 10%;
+        /* Link Styling */
+        a {
+            color: #fff;
+            text-decoration: underline;
         }
-        .shape1 {
-            width: 250px;
-            height: 300px;
-            top: 10%;
-            left: 20%;
-            background: #333;
-        }
-        .shape2 {
-            width: 150px;
-            height: 200px;
-            top: 50%;
-            left: 60%;
-            background: #666;
-            transform: rotate(15deg);
-        }
-        .shape3 {
-            width: 100px;
-            height: 100px;
-            bottom: 10%;
-            left: 15%;
-            background: #999;
-        }
-        .shape4 {
-            width: 200px;
-            height: 200px;
-            top: 35%;
-            right: 10%;
-            background: #444;
-            transform: rotate(-10deg);
-        }
-
-        /* Content Container */
-        .container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            z-index: 20;
-            padding: 20px;
-        }
-        .section {
-            margin: 40px 0;
-        }
-        .section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            font-size: 0.9rem;
-            margin-top: 40px;
-            padding-top: 10px;
-            background: #222;
-            color: #eee;
+        a:hover {
+            color: #ddd;
         }
     </style>
 </head>
 <body>
-    <!-- Background Shapes -->
-    <div class="shape shape1"></div>
-    <div class="shape shape2"></div>
-    <div class="shape shape3"></div>
-    <div class="shape shape4"></div>
+    <!-- Main Title -->
+    <div class="title">Merlin Balkhash</div>
 
-    <!-- Header -->
-    <h1>Merlin Balkhash</h1>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="section" id="about">
-            <h2>About Me</h2>
-            <p>Hello! I’m <strong>Merlin Balkhash Udinov</strong>.</p>
-        </div>
-
-        <div class="section" id="research">
-            <h2>Research</h2>
-            <ul>
-                <li><a href="https://example.com">Title of Paper 1</a></li>
-                <li><a href="https://example.com">Title of Paper 2</a></li>
-                <li><a href="https://example.com">Title of Paper 3</a></li>
-            </ul>
-        </div>
-
-        <div class="section" id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-            <p>GitHub: <a href="https://github.com/yourusername">https://github.com/yourusername</a></p>
-        </div>
+    <!-- Irregular Content Blocks -->
+    <div class="block block1">
+        <h2>About Me</h2>
+        <p>Hello! I’m Merlin Balkhash, a passionate researcher in [Your Field]. I focus on [Your Topics].</p>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
-    </footer>
+    <div class="block block2">
+        <h2>Research</h2>
+        <ul>
+            <li><a href="https://example.com">Paper 1</a></li>
+            <li><a href="https://example.com">Paper 2</a></li>
+            <li><a href="https://example.com">Paper 3</a></li>
+        </ul>
+    </div>
+
+    <div class="block block3">
+        <h2>Fun Fact</h2>
+        <p>When not working, I enjoy [Your Fun Hobby]. It helps me relax and stay inspired!</p>
+    </div>
+
+    <div class="block block4">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/yourusername">https://github.com/yourusername</a></p>
+    </div>
 </body>
 </html>
