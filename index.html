@@ -7,86 +7,94 @@
     <style>
         /* Basic Page Styles */
         body {
-            font-family: "Courier New", monospace;
-            background: #f9f9f9;
+            font-family: "Georgia", serif;
+            background: #fff;
             color: #000;
             margin: 0;
             padding: 20px;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         h1, h2, h3 {
-            text-align: center;
             font-family: "Times New Roman", serif;
-            text-transform: uppercase;
+            text-align: center;
+            font-weight: normal;
+            margin: 10px 0;
         }
         h1 {
-            font-size: 2.5rem;
-            text-decoration: underline;
-        }
-        /* Weirdness touch */
-        h2 {
-            font-size: 1.8rem;
+            font-size: 3rem;
+            text-transform: uppercase;
             letter-spacing: 2px;
         }
-        /* Link Styles */
+        h2 {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: -10px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+        p, ul {
+            font-size: 1rem;
+            text-align: justify;
+            margin: 0 0 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li::before {
+            content: "—";
+            margin-right: 10px;
+        }
         a {
-            text-decoration: none;
             color: #000;
-            border-bottom: 2px dashed #000;
-            transition: color 0.3s, border-bottom 0.3s;
+            text-decoration: none;
+            border-bottom: 1px dotted #000;
+            transition: border-bottom 0.3s ease;
         }
         a:hover {
-            color: gray;
-            border-bottom: 2px solid gray;
+            border-bottom: 1px solid #000;
         }
-        /* Sections Layout */
+        /* Layout */
         .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            text-align: left;
+            padding: 10px 20px;
         }
-        section {
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 2px dashed #000;
-            border-radius: 10px;
+        header {
+            margin-bottom: 50px;
         }
-        /* Footer */
         footer {
             text-align: center;
             font-size: 0.9rem;
-            margin-top: 30px;
-            border-top: 2px solid #000;
-            padding-top: 10px;
-        }
-        /* Extra weirdness */
-        .weird-accent {
-            font-size: 1.2rem;
-            font-weight: bold;
-            transform: rotate(-5deg);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #000;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>My Name</h1>
-        <h2 class="weird-accent">Researcher. Dreamer. Slightly Weird.</h2>
+        <h2>Academic Researcher & Slightly Odd</h2>
     </header>
 
     <div class="container">
         <!-- About Me Section -->
         <section id="about">
             <h3>About Me</h3>
-            <p>Hello! I'm [Your Name], an academic researcher in [Your Field]. My work focuses on exploring [Your Interests or Keywords]. When I'm not working, you can find me [Your Fun Fact].</p>
+            <p>Hello! I’m <strong>[Your Name]</strong>, a passionate academic in <strong>[Your Field]</strong>. My work focuses on <strong>[Your Research Focus]</strong>. In my free time, I enjoy <strong>[Fun Fact]</strong>.</p>
         </section>
 
         <!-- Research Section -->
         <section id="research">
             <h3>Research</h3>
             <ul>
-                <li><strong>Paper 1:</strong> <a href="https://example.com">Title of Paper 1</a></li>
-                <li><strong>Paper 2:</strong> <a href="https://example.com">Title of Paper 2</a></li>
-                <li><strong>Paper 3:</strong> <a href="https://example.com">Title of Paper 3</a></li>
+                <li><a href="https://example.com">Title of Paper 1</a></li>
+                <li><a href="https://example.com">Title of Paper 2</a></li>
+                <li><a href="https://example.com">Title of Paper 3</a></li>
             </ul>
         </section>
 
@@ -100,7 +108,6 @@
 
     <footer>
         <p>&copy; 2025 [Your Name]. All rights reserved.</p>
-        <p class="weird-accent">Let's make something weirdly beautiful!</p>
     </footer>
 </body>
 </html>
