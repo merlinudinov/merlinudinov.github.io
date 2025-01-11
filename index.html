@@ -3,114 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Academic Website</title>
+    <title>Merlin Balkhash Udinov</title>
     <style>
-        /* Font Import */
+        /* Importing Font */
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
-        /* Basic Styles */
+        /* General Page Style */
         body {
             margin: 0;
             padding: 0;
             font-family: "Merriweather", Georgia, serif;
-            background: #f8f8f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        /* Irregular Content Blocks */
-        .block {
-            position: relative;
-            color: #fff;
-            font-size: 1rem;
+            background: #eaeaea; /* Light gray base */
+            color: #222;
+            line-height: 1.8;
             overflow: hidden;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            line-height: 1.5;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Shapes and Colors for Blocks */
-        .block1 {
-            background: #444;
-            width: 300px;
-            height: 300px;
+        /* Irregular Section Styles */
+        .section {
+            position: relative;
+            width: 100%;
+            padding: 50px;
+            color: #222;
         }
 
-        .block2 {
-            background: #666;
-            width: 400px;
-            height: 200px;
+        /* Irregular Shapes with Lighter Grays */
+        .about {
+            background: radial-gradient(circle at 30% 50%, #f5f5f5, #d9d9d9);
+            clip-path: polygon(20% 0%, 80% 10%, 95% 40%, 70% 80%, 40% 90%, 5% 50%);
+        }
+        .research {
+            background: radial-gradient(circle at 70% 30%, #e8e8e8, #cccccc);
+            clip-path: polygon(10% 5%, 90% 0%, 95% 50%, 70% 95%, 30% 90%, 5% 60%);
+        }
+        .fun {
+            background: radial-gradient(circle at 50% 70%, #f0f0f0, #e0e0e0);
+            clip-path: polygon(0% 20%, 50% 10%, 95% 25%, 90% 75%, 50% 95%, 5% 80%);
+        }
+        .contact {
+            background: radial-gradient(circle at 20% 80%, #ffffff, #dddddd);
+            clip-path: polygon(5% 10%, 60% 0%, 95% 20%, 85% 85%, 40% 95%, 0% 60%);
         }
 
-        .block3 {
-            background: #888;
-            width: 300px;
-            height: 400px;
-        }
-
-        .block4 {
-            background: #222;
-            width: 500px;
-            height: 300px;
-        }
-
-        /* Title (Centered on Page) */
-        .title {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+        /* Section Content Styling */
+        h1, h2 {
+            font-size: 2.5rem;
             text-transform: small-caps;
-            font-size: 3rem;
-            color: #000;
             text-align: center;
-            z-index: 10;
+            margin: 0;
+            padding: 0;
         }
-
-        /* Link Styling */
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        p, ul {
+            font-size: 1rem;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
         a {
-            color: #fff;
-            text-decoration: underline;
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+            border-bottom: 1px solid #888;
         }
         a:hover {
-            color: #ddd;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #f0f0f0;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <!-- Main Title -->
-    <div class="title">Merlin Balkhash</div>
 
-    <!-- Irregular Content Blocks -->
-    <div class="block block1">
+    <!-- About Section -->
+    <div class="section about">
+        <h1>Merlin Balkhash</h1>
         <h2>About Me</h2>
-        <p>Hello! I’m Merlin Balkhash, a passionate researcher in [Your Field]. I focus on [Your Topics].</p>
+        <p>Hello! I’m Merlin Balkhash, a passionate academic researcher specializing in [Your Field]. My work focuses on [Your Interests or Keywords].</p>
     </div>
 
-    <div class="block block2">
+    <!-- Research Section -->
+    <div class="section research">
         <h2>Research</h2>
         <ul>
-            <li><a href="https://example.com">Paper 1</a></li>
-            <li><a href="https://example.com">Paper 2</a></li>
-            <li><a href="https://example.com">Paper 3</a></li>
+            <li><a href="https://example.com">Paper 1: Title of Paper 1</a></li>
+            <li><a href="https://example.com">Paper 2: Title of Paper 2</a></li>
+            <li><a href="https://example.com">Paper 3: Title of Paper 3</a></li>
         </ul>
     </div>
 
-    <div class="block block3">
+    <!-- Fun Section -->
+    <div class="section fun">
         <h2>Fun Fact</h2>
-        <p>When not working, I enjoy [Your Fun Hobby]. It helps me relax and stay inspired!</p>
+        <p>When I’m not working, I enjoy [Your Fun Hobby]. It keeps me balanced and inspired!</p>
     </div>
 
-    <div class="block block4">
+    <!-- Contact Section -->
+    <div class="section contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
         <p>GitHub: <a href="https://github.com/yourusername">https://github.com/yourusername</a></p>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Merlin Balkhash. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
