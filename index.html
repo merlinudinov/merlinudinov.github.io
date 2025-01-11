@@ -7,106 +7,144 @@
     <style>
         /* Basic Page Styles */
         body {
-            font-family: "Georgia", serif;
-            background: #fff;
-            color: #000;
             margin: 0;
-            padding: 20px;
-            line-height: 1.8;
-        }
-        h1, h2, h3 {
-            font-family: "Merriweather", serif;
-            text-align: center;
-            font-weight: normal;
-            margin: 10px 0;
+            padding: 0;
+            font-family: "Merriweather", Georgia, serif;
+            background: #f4f4f4;
+            color: #000;
         }
         h1 {
             font-size: 3rem;
-            text-transform: uppercase;
+            text-transform: small-caps;
             letter-spacing: 2px;
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
         }
-        h2 {
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-top: -10px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            margin-top: 30px;
-        }
-        p, ul {
+        p, ul, a {
             font-size: 1rem;
             text-align: justify;
-            margin: 0 0 20px;
+            color: #000;
+            text-decoration: none;
         }
         ul {
             list-style: none;
             padding: 0;
         }
         li::before {
-            content: "—";
-            margin-right: 10px;
+            content: "•";
+            color: #555;
+            margin-right: 5px;
         }
-        a {
-            color: #000;
-            text-decoration: none;
-            border-bottom: 1px dotted #000;
-            transition: border-bottom 0.3s ease;
+
+        /* Irregular Graphic Shapes */
+        .shape {
+            position: absolute;
+            background: #000;
+            opacity: 0.7;
+            border-radius: 10%;
         }
-        a:hover {
-            border-bottom: 1px solid #000;
+        .shape1 {
+            width: 250px;
+            height: 300px;
+            top: 10%;
+            left: 20%;
+            background: #333;
         }
-        /* Layout */
+        .shape2 {
+            width: 150px;
+            height: 200px;
+            top: 50%;
+            left: 60%;
+            background: #666;
+            transform: rotate(15deg);
+        }
+        .shape3 {
+            width: 100px;
+            height: 100px;
+            bottom: 10%;
+            left: 15%;
+            background: #999;
+        }
+        .shape4 {
+            width: 200px;
+            height: 200px;
+            top: 35%;
+            right: 10%;
+            background: #444;
+            transform: rotate(-10deg);
+        }
+
+        /* Content Container */
         .container {
-            max-width: 700px;
+            position: relative;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 10px 20px;
+            z-index: 20;
+            padding: 20px;
         }
-        header {
-            margin-bottom: 50px;
+        .section {
+            margin: 40px 0;
         }
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             font-size: 0.9rem;
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #000;
+            padding-top: 10px;
+            background: #222;
+            color: #eee;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Merlin Balkhash Udinov</h1>
-        <h2>Linguist & Sorcerer </h2>
-    </header>
+    <!-- Background Shapes -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
 
+    <!-- Header -->
+    <h1>Merlin Balkhash</h1>
+
+    <!-- Main Content -->
     <div class="container">
-        <!-- About Me Section -->
-        <section id="about">
-            <h3>About Me</h3>
-            <p>Hello! I’m <strong>Merlin</strong>.
+        <div class="section" id="about">
+            <h2>About Me</h2>
+            <p>Hello! I’m <strong>Merlin Balkhash Udinov</strong>.</p>
+        </div>
 
-        <!-- Research Section -->
-        <section id="research">
-            <h3>Research</h3>
+        <div class="section" id="research">
+            <h2>Research</h2>
             <ul>
                 <li><a href="https://example.com">Title of Paper 1</a></li>
                 <li><a href="https://example.com">Title of Paper 2</a></li>
                 <li><a href="https://example.com">Title of Paper 3</a></li>
             </ul>
-        </section>
+        </div>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h3>Contact</h3>
+        <div class="section" id="contact">
+            <h2>Contact</h2>
             <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
             <p>GitHub: <a href="https://github.com/yourusername">https://github.com/yourusername</a></p>
-        </section>
+        </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 [Merlin Udinov]. All rights reserved.</p>
+        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
     </footer>
 </body>
 </html>
