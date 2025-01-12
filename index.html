@@ -15,12 +15,17 @@
             font-family: "Merriweather", Georgia, serif;
             background: #eaeaea; /* Light gray base */
             line-height: 1.8;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px; /* Small space between tiles */
         }
 
         /* Header: Name at Top */
         .header {
             text-align: center;
+            width: 100%;
             padding: 20px 0;
             background: #fff;
             font-size: 2.5rem;
@@ -28,69 +33,50 @@
             text-transform: small-caps;
             color: #000;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+            margin-bottom: 20px;
         }
 
-        /* Irregular Section Styles */
-        .section {
+        /* Mosaic Grid Styling */
+        .tile {
             position: relative;
-            width: 100%;
-            padding: 100px 20px;
-            text-align: center;
+            width: calc(50% - 10px); /* 2 tiles per row */
+            height: 200px; /* Consistent tile height */
             overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            clip-path: polygon(10% 0%, 90% 5%, 95% 90%, 60% 95%, 5% 70%);
         }
 
-        /* Irregular Background Shapes with Text Contrast */
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            clip-path: polygon(20% 0%, 80% 10%, 95% 40%, 70% 80%, 40% 90%, 5% 50%);
-            background: radial-gradient(circle at 30% 50%, #f5f5f5, #d9d9d9);
+        /* Shades of Gray */
+        .light {
+            background: #f5f5f5;
+            color: #222; /* Dark text */
         }
-        .research::before {
-            clip-path: polygon(10% 5%, 90% 0%, 95% 50%, 70% 95%, 30% 90%, 5% 60%);
-            background: radial-gradient(circle at 70% 30%, #e8e8e8, #cccccc);
+        .medium {
+            background: #cccccc;
+            color: #000; /* Black text */
         }
-        .fun::before {
-            clip-path: polygon(0% 20%, 50% 10%, 95% 25%, 90% 75%, 50% 95%, 5% 80%);
-            background: radial-gradient(circle at 50% 70%, #f0f0f0, #e0e0e0);
-        }
-        .contact::before {
-            clip-path: polygon(5% 10%, 60% 0%, 95% 20%, 85% 85%, 40% 95%, 0% 60%);
-            background: radial-gradient(circle at 20% 80%, #ffffff, #dddddd);
+        .dark {
+            background: #888888;
+            color: #fff; /* Light text */
         }
 
-        /* Dynamic Text Colors */
-        .section {
-            color: #333; /* Default text color for light backgrounds */
-        }
-        .section.dark {
-            color: #fff; /* White text for darker backgrounds */
-        }
-
-        /* Section Content Styling */
+        /* Tile Content Styling */
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             text-transform: small-caps;
-            margin: 0 0 20px 0;
+            margin: 0 0 10px 0;
         }
         p, ul {
-            font-size: 1rem;
-            text-align: center;
-            margin: 0 auto 20px;
-            max-width: 600px;
+            font-size: 0.9rem;
+            margin: 0;
         }
         ul {
             list-style: none;
             padding: 0;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         a {
             text-decoration: none;
@@ -101,14 +87,6 @@
         a:hover {
             color: #555;
         }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background: #f0f0f0;
-            font-size: 0.9rem;
-        }
     </style>
 </head>
 <body>
@@ -116,14 +94,13 @@
     <!-- Header -->
     <div class="header">Merlin Balkhash</div>
 
-    <!-- About Section -->
-    <div class="section about">
+    <!-- Mosaic Tiles -->
+    <div class="tile light">
         <h2>About Me</h2>
-        <p>Hello! I’m Merlin Balkhash, a passionate academic researcher specializing in [Your Field]. My work focuses on [Your Interests or Keywords].</p>
+        <p>Hello! I’m Merlin Balkhash, a passionate academic researcher specializing in [Your Field].</p>
     </div>
 
-    <!-- Research Section -->
-    <div class="section research dark">
+    <div class="tile dark">
         <h2>Research</h2>
         <ul>
             <li><a href="https://example.com">Paper 1: Title of Paper 1</a></li>
@@ -132,23 +109,26 @@
         </ul>
     </div>
 
-    <!-- Fun Section -->
-    <div class="section fun">
+    <div class="tile medium">
         <h2>Fun Fact</h2>
         <p>When I’m not working, I enjoy [Your Fun Hobby]. It keeps me balanced and inspired!</p>
     </div>
 
-    <!-- Contact Section -->
-    <div class="section contact dark">
+    <div class="tile dark">
+        <h2>Projects</h2>
+        <p>Currently, I’m working on [Your Project Title or Area]. Check out more on my GitHub!</p>
+    </div>
+
+    <div class="tile light">
+        <h2>Teaching</h2>
+        <p>I love teaching topics like [Topic 1] and [Topic 2]. It’s one of my greatest passions!</p>
+    </div>
+
+    <div class="tile medium">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
         <p>GitHub: <a href="https://github.com/yourusername">https://github.com/yourusername</a></p>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Merlin Balkhash. All rights reserved.</p>
-    </footer>
 
 </body>
 </html>
