@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merlin Udinov</title>
+    <title>My Academic Website</title>
     <style>
         /* Importing Font */
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
@@ -16,10 +16,9 @@
             background: #eaeaea; /* Light gray base */
             line-height: 1.8;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px; /* Small space between tiles */
+            gap: 10px; /* Gap between header, grid, and footer */
         }
 
         /* Header: Name at Top */
@@ -36,10 +35,18 @@
             margin-bottom: 20px;
         }
 
-        /* Mosaic Grid Styling */
+        /* Mosaic Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 10px; /* Space between tiles */
+            width: 90%;
+            max-width: 1200px; /* Limit grid width on large screens */
+        }
+
+        /* Mosaic Tiles */
         .tile {
             position: relative;
-            width: calc(50% - 10px); /* 2 tiles per row */
             height: 200px; /* Consistent tile height */
             overflow: hidden;
             text-align: center;
@@ -87,6 +94,26 @@
         a:hover {
             color: #555;
         }
+
+        /* Footer Contact Section */
+        .footer {
+            text-align: center;
+            width: 100%;
+            background: #f0f0f0;
+            padding: 20px 0;
+            margin-top: 20px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .footer p, .footer a {
+            font-size: 0.9rem;
+            color: #444;
+        }
+        .footer a {
+            border-bottom: 1px dotted #444;
+        }
+        .footer a:hover {
+            color: #222;
+        }
     </style>
 </head>
 <body>
@@ -94,38 +121,46 @@
     <!-- Header -->
     <div class="header">Merlin Balkhash</div>
 
-    <!-- Mosaic Tiles -->
-    <div class="tile light">
-        <h2>About Me</h2>
-        <p>Hello! I’m Merlin Balkhash, a passionate academic researcher specializing in [Your Field].</p>
+    <!-- Mosaic Grid -->
+    <div class="grid">
+        <div class="tile light">
+            <h2>About Me</h2>
+            <p>Hello! I’m Merlin Balkhash, a passionate academic researcher specializing in [Your Field].</p>
+        </div>
+
+        <div class="tile dark">
+            <h2>Research</h2>
+            <ul>
+                <li><a href="https://example.com">Paper 1: Title of Paper 1</a></li>
+                <li><a href="https://example.com">Paper 2: Title of Paper 2</a></li>
+                <li><a href="https://example.com">Paper 3: Title of Paper 3</a></li>
+            </ul>
+        </div>
+
+        <div class="tile medium">
+            <h2>Fun Fact</h2>
+            <p>When I’m not working, I enjoy [Your Fun Hobby]. It keeps me balanced and inspired!</p>
+        </div>
+
+        <div class="tile dark">
+            <h2>Projects</h2>
+            <p>Currently, I’m working on [Your Project Title or Area]. Check out more on my GitHub!</p>
+        </div>
+
+        <div class="tile light">
+            <h2>Teaching</h2>
+            <p>I love teaching topics like [Topic 1] and [Topic 2]. It’s one of my greatest passions!</p>
+        </div>
+
+        <div class="tile medium">
+            <h2>Interests</h2>
+            <p>Besides research, I explore [Your Other Interests], which fuels my creativity and curiosity.</p>
+        </div>
     </div>
 
-    <div class="tile dark">
-        <h2>Research</h2>
-        <ul>
-            <li><a href="https://example.com">Paper 1: Title of Paper 1</a></li>
-            <li><a href="https://example.com">Paper 2: Title of Paper 2</a></li>
-            <li><a href="https://example.com">Paper 3: Title of Paper 3</a></li>
-        </ul>
-    </div>
-
-    <div class="tile medium">
-        <h2>Fun Fact</h2>
-        <p>When I’m not working, I enjoy [Your Fun Hobby]. It keeps me balanced and inspired!</p>
-    </div>
-
-    <div class="tile dark">
-        <h2>Projects</h2>
-        <p>Currently, I’m working on [Your Project Title or Area]. Check out more on my GitHub!</p>
-    </div>
-
-    <div class="tile light">
-        <h2>Teaching</h2>
-        <p>I love teaching topics like [Topic 1] and [Topic 2]. It’s one of my greatest passions!</p>
-    </div>
-
-    <div class="tile medium">
-        <h2>Contact</h2>
+    <!-- Footer Contact Section -->
+    <div class="footer">
+        <p><strong>Contact Me:</strong></p>
         <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
         <p>GitHub: <a href="https://github.com/yourusername">https://github.com/yourusername</a></p>
     </div>
