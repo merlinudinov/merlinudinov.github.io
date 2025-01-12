@@ -13,12 +13,10 @@
             margin: 0;
             padding: 0;
             font-family: "Merriweather", Georgia, serif;
-            background: #eaeaea; /* Light gray base */
-            line-height: 1.8;
+            background: #eaeaea;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px; /* Gap between header, grid, and footer */
         }
 
         /* Header: Name at Top */
@@ -32,87 +30,96 @@
             text-transform: small-caps;
             color: #000;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
         }
 
-        /* Mosaic Grid */
-        .grid {
+        /* Mosaic Container */
+        .mosaic {
+            position: relative;
             display: grid;
+            grid-template-rows: repeat(2, 1fr); /* 2 rows */
             grid-template-columns: repeat(3, 1fr); /* 3 columns */
-            gap: 10px; /* Space between tiles */
-            width: 90%;
-            max-width: 1200px; /* Limit grid width on large screens */
+            width: 90%; /* Adjust size of the mosaic */
+            height: 600px; /* Fixed height for all 6 tiles */
+            max-width: 1200px; /* Limit the width */
         }
 
-        /* Mosaic Tiles */
+        /* Irregular Shapes */
         .tile {
             position: relative;
-            height: 200px; /* Consistent tile height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
             text-align: center;
             padding: 20px;
-            clip-path: polygon(10% 0%, 90% 5%, 95% 90%, 60% 95%, 5% 70%);
+            clip-path: polygon(10% 0%, 90% 5%, 95% 90%, 60% 95%, 5% 70%); /* Default shape */
+            font-size: 1rem;
         }
 
-        /* Shades of Gray */
-        .light {
+        /* Each Tile's Unique Shape */
+        .tile:nth-child(1) {
+            clip-path: polygon(0 0, 70% 10%, 80% 60%, 10% 90%, 0 50%);
             background: #f5f5f5;
-            color: #222; /* Dark text */
-        }
-        .medium {
-            background: #cccccc;
-            color: #000; /* Black text */
-        }
-        .dark {
-            background: #888888;
-            color: #fff; /* Light text */
+            color: #222;
         }
 
-        /* Tile Content Styling */
+        .tile:nth-child(2) {
+            clip-path: polygon(10% 0%, 100% 0, 80% 80%, 50% 100%, 0 90%);
+            background: #cccccc;
+            color: #000;
+        }
+
+        .tile:nth-child(3) {
+            clip-path: polygon(20% 0, 100% 10%, 80% 70%, 30% 90%, 0 70%);
+            background: #888888;
+            color: #fff;
+        }
+
+        .tile:nth-child(4) {
+            clip-path: polygon(10% 5%, 80% 0, 100% 60%, 70% 100%, 0 70%);
+            background: #cccccc;
+            color: #000;
+        }
+
+        .tile:nth-child(5) {
+            clip-path: polygon(0 10%, 90% 0, 100% 80%, 30% 100%, 0 70%);
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        .tile:nth-child(6) {
+            clip-path: polygon(20% 0, 100% 10%, 80% 70%, 40% 100%, 0 70%);
+            background: #888888;
+            color: #fff;
+        }
+
+        /* Tile Content */
         h2 {
             font-size: 1.2rem;
             text-transform: small-caps;
             margin: 0 0 10px 0;
         }
-        p, ul {
-            font-size: 0.9rem;
+        p {
             margin: 0;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        a {
-            text-decoration: none;
-            color: inherit; /* Matches the text color */
-            font-weight: bold;
-            border-bottom: 1px solid currentColor;
-        }
-        a:hover {
-            color: #555;
-        }
 
-        /* Footer Contact Section */
+        /* Footer for Contact */
         .footer {
             text-align: center;
-            width: 100%;
-            background: #f0f0f0;
             padding: 20px 0;
+            background: #f0f0f0;
+            font-size: 0.9rem;
+            width: 90%;
+            max-width: 1200px;
             margin-top: 20px;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
         .footer p, .footer a {
-            font-size: 0.9rem;
             color: #444;
-        }
-        .footer a {
-            border-bottom: 1px dotted #444;
+            text-decoration: none;
         }
         .footer a:hover {
-            color: #222;
+            color: #000;
         }
     </style>
 </head>
@@ -121,40 +128,31 @@
     <!-- Header -->
     <div class="header">Merlin Balkhash</div>
 
-    <!-- Mosaic Grid -->
-    <div class="grid">
-        <div class="tile light">
+    <!-- Mosaic Layout -->
+    <div class="mosaic">
+        <div class="tile">
             <h2>About Me</h2>
             <p>Hello! I’m Merlin Balkhash, a passionate academic researcher specializing in [Your Field].</p>
         </div>
-
-        <div class="tile dark">
+        <div class="tile">
             <h2>Research</h2>
-            <ul>
-                <li><a href="https://example.com">Paper 1: Title of Paper 1</a></li>
-                <li><a href="https://example.com">Paper 2: Title of Paper 2</a></li>
-                <li><a href="https://example.com">Paper 3: Title of Paper 3</a></li>
-            </ul>
+            <p>My work explores [Research Area] and has been published in [Journals].</p>
         </div>
-
-        <div class="tile medium">
+        <div class="tile">
             <h2>Fun Fact</h2>
-            <p>When I’m not working, I enjoy [Your Fun Hobby]. It keeps me balanced and inspired!</p>
+            <p>When I’m not working, I enjoy [Your Fun Hobby], which keeps me inspired!</p>
         </div>
-
-        <div class="tile dark">
-            <h2>Projects</h2>
-            <p>Currently, I’m working on [Your Project Title or Area]. Check out more on my GitHub!</p>
-        </div>
-
-        <div class="tile light">
+        <div class="tile">
             <h2>Teaching</h2>
-            <p>I love teaching topics like [Topic 1] and [Topic 2]. It’s one of my greatest passions!</p>
+            <p>I teach [Topics], aiming to inspire the next generation of researchers.</p>
         </div>
-
-        <div class="tile medium">
+        <div class="tile">
+            <h2>Projects</h2>
+            <p>Currently, I’m working on [Your Project Title or Area].</p>
+        </div>
+        <div class="tile">
             <h2>Interests</h2>
-            <p>Besides research, I explore [Your Other Interests], which fuels my creativity and curiosity.</p>
+            <p>I also explore [Your Other Interests], which fuel my creativity and curiosity.</p>
         </div>
     </div>
 
@@ -163,6 +161,7 @@
         <p><strong>Contact Me:</strong></p>
         <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
         <p>GitHub: <a href="https://github.com/yourusername">https://github.com/yourusername</a></p>
+        <p>&copy; 2025 Merlin Balkhash. All rights reserved.</p>
     </div>
 
 </body>
