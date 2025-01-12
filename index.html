@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merlin Balkhash Udinov</title>
+    <title>Merlin Udinov</title>
     <style>
         /* Importing Font */
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
@@ -14,53 +14,75 @@
             padding: 0;
             font-family: "Merriweather", Georgia, serif;
             background: #eaeaea; /* Light gray base */
-            color: #222;
             line-height: 1.8;
             overflow: hidden;
+        }
+
+        /* Header: Name at Top */
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: small-caps;
+            color: #000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
         /* Irregular Section Styles */
         .section {
             position: relative;
             width: 100%;
-            padding: 50px;
-            color: #222;
+            padding: 100px 20px;
+            text-align: center;
+            overflow: hidden;
         }
 
-        /* Irregular Shapes with Lighter Grays */
-        .about {
-            background: radial-gradient(circle at 30% 50%, #f5f5f5, #d9d9d9);
+        /* Irregular Background Shapes with Text Contrast */
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
             clip-path: polygon(20% 0%, 80% 10%, 95% 40%, 70% 80%, 40% 90%, 5% 50%);
+            background: radial-gradient(circle at 30% 50%, #f5f5f5, #d9d9d9);
         }
-        .research {
-            background: radial-gradient(circle at 70% 30%, #e8e8e8, #cccccc);
+        .research::before {
             clip-path: polygon(10% 5%, 90% 0%, 95% 50%, 70% 95%, 30% 90%, 5% 60%);
+            background: radial-gradient(circle at 70% 30%, #e8e8e8, #cccccc);
         }
-        .fun {
-            background: radial-gradient(circle at 50% 70%, #f0f0f0, #e0e0e0);
+        .fun::before {
             clip-path: polygon(0% 20%, 50% 10%, 95% 25%, 90% 75%, 50% 95%, 5% 80%);
+            background: radial-gradient(circle at 50% 70%, #f0f0f0, #e0e0e0);
         }
-        .contact {
-            background: radial-gradient(circle at 20% 80%, #ffffff, #dddddd);
+        .contact::before {
             clip-path: polygon(5% 10%, 60% 0%, 95% 20%, 85% 85%, 40% 95%, 0% 60%);
+            background: radial-gradient(circle at 20% 80%, #ffffff, #dddddd);
+        }
+
+        /* Dynamic Text Colors */
+        .section {
+            color: #333; /* Default text color for light backgrounds */
+        }
+        .section.dark {
+            color: #fff; /* White text for darker backgrounds */
         }
 
         /* Section Content Styling */
-        h1, h2 {
-            font-size: 2.5rem;
-            text-transform: small-caps;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
         h2 {
             font-size: 1.5rem;
-            margin-top: 20px;
+            text-transform: small-caps;
+            margin: 0 0 20px 0;
         }
         p, ul {
             font-size: 1rem;
             text-align: center;
-            margin: 20px auto;
+            margin: 0 auto 20px;
             max-width: 600px;
         }
         ul {
@@ -72,9 +94,9 @@
         }
         a {
             text-decoration: none;
-            color: #222;
+            color: inherit; /* Matches the text color */
             font-weight: bold;
-            border-bottom: 1px solid #888;
+            border-bottom: 1px solid currentColor;
         }
         a:hover {
             color: #555;
@@ -91,15 +113,17 @@
 </head>
 <body>
 
+    <!-- Header -->
+    <div class="header">Merlin Balkhash</div>
+
     <!-- About Section -->
     <div class="section about">
-        <h1>Merlin Balkhash</h1>
         <h2>About Me</h2>
         <p>Hello! I’m Merlin Balkhash, a passionate academic researcher specializing in [Your Field]. My work focuses on [Your Interests or Keywords].</p>
     </div>
 
     <!-- Research Section -->
-    <div class="section research">
+    <div class="section research dark">
         <h2>Research</h2>
         <ul>
             <li><a href="https://example.com">Paper 1: Title of Paper 1</a></li>
@@ -115,7 +139,7 @@
     </div>
 
     <!-- Contact Section -->
-    <div class="section contact">
+    <div class="section contact dark">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
         <p>GitHub: <a href="https://github.com/yourusername">https://github.com/yourusername</a></p>
