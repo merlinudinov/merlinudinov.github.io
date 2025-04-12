@@ -3,3 +3,11 @@ title: "Welcome to my website!"
 ---
 
 You're up and running!
+
+A huge sorry to Mr. Florian Privé, the developer of this personal website template.
+
+I am not very good at using Github and I cannot really follow their instructions.
+
+Thus, I copied the whole file directory. This is not my design!
+
+Please find the original template [here](https://github.com/privefl/rmarkdown-website-template?tab=readme-ov-file).
